@@ -9,7 +9,7 @@ Heavy data processing (Python / Pandas) is fully decoupled from the presentation
 ```
 ┌─────────────────────────┐         multipart upload          ┌──────────────────────────────┐
 │   Next.js + Recharts     │  ──────────────────────────────▶ │   FastAPI + Pandas/NumPy       │
-│   (client/, port 3000)   │ ◀──────────────────────────────  │   (server/, port 8000)         │
+│   (client/, port 3100)   │ ◀──────────────────────────────  │   (server/, port 8100)         │
 │   upload · dashboard     │            JSON report            │   ingest→validate→clean→analyze │
 └─────────────────────────┘                                   └──────────────────────────────┘
 ```
@@ -68,34 +68,36 @@ csv-insight-pipeline/
 
 ## Quick start
 
-### 1. Backend (FastAPI, port 8000)
+### 1. Backend (FastAPI, port 8100)
 
 ```bash
 cd server
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --port 8100   # or: python -m app.main  (honours $PORT, default 8100)
 ```
 
-- Interactive API docs: <http://localhost:8000/docs>
-- Health: <http://localhost:8000/api/v1/health>
+- Interactive API docs: <http://localhost:8100/docs>
+- Health: <http://localhost:8100/api/v1/health>
 
-### 2. Frontend (Next.js, port 3000)
+### 2. Frontend (Next.js, port 3100)
 
 ```bash
 cd client
 npm install
-npm run dev          # http://localhost:3000
+npm run dev          # http://localhost:3100
 ```
 
-If port 3000 is taken, run on another port and point the app + CORS at it:
-
-```bash
-# client
-NEXT_PUBLIC_API_BASE=http://localhost:8000 npx next dev -p 3100
-# server (allow the new origin)
-ALLOWED_ORIGINS="http://localhost:3100" uvicorn app.main:app --reload --port 8000
-```
+> The frontend defaults to **port 3100** (deliberately not 3000, to avoid clashing
+> with other local dev servers). The backend's default CORS allowlist already permits
+> :3100, so `npm run dev` + `uvicorn` work together with no extra configuration.
+>
+> To run on a different port, set it on both sides:
+>
+> ```bash
+> npx next dev -p 4000                                                   # client
+> ALLOWED_ORIGINS="http://localhost:4000" uvicorn app.main:app --reload --port 8100  # server
+> ```
 
 ## API contract
 

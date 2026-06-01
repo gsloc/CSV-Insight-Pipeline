@@ -50,3 +50,10 @@ def root() -> dict:
         "health": "/api/v1/health",
         "analyze": "POST /api/v1/analyze",
     }
+
+
+if __name__ == "__main__":
+    # Config-driven entrypoint: `python -m app.main` honours HOST/PORT (default 8100).
+    import uvicorn
+
+    uvicorn.run("app.main:app", host=settings.host, port=settings.port, reload=True)
