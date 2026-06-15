@@ -18,9 +18,16 @@ presentation layer (Next.js), so each tier scales independently.
 
 🔗 **Repo:** <https://github.com/gsloc/CSV-Insight-Pipeline>
 
-<!-- Add a screenshot of the dashboard here once captured:
-![Dashboard](docs/dashboard.png)
--->
+## 📸 Screenshots
+
+![Upload screen](docs/upload.png)
+*Clean CSV upload with strategy and outlier-method selection*
+
+![Overview dashboard](docs/overview.png)
+*Quality score, KPIs, AI-generated insights, and inferred schema at a glance*
+
+![Correlation heatmap](docs/correlation.png)
+*Custom divergent heatmap with paired bar chart for strongest relationships*
 
 ---
 
