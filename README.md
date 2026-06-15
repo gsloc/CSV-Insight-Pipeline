@@ -253,5 +253,5 @@ FastAPI's `TestClient`.
 
 ## 📄 License
 
-No license file yet — add one (e.g. [MIT](https://choosealicense.com/licenses/mit/))
-before sharing the repo publicly.
+## 📄 License
+MIT — see [LICENSE](LICENSE) for details.
