@@ -17,3 +17,4 @@ client/next-env.d.ts
 
 # OS
 .DS_Store
+boat_data.csv
