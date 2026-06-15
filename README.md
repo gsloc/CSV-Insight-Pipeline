@@ -222,13 +222,17 @@ Returns service status and the available strategies / outlier methods.
 ## 🧪 Testing
 
 ```bash
-cd server && pytest          # 47 tests
+cd server
+pip install -r requirements.txt    # if you haven't already
+python -m pytest
 ```
 
 Coverage targets the required areas — **schema detection**, **missing-value imputation
 strategies**, and **outlier-detection math** — plus statistics, the ingestion layer
 (encoding / headerless / malformed rows), and a full end-to-end API test through
 FastAPI's `TestClient`.
+
+The CI badge at the top of this README reflects the current state of these tests on the `main` branch.
 
 ---
 
