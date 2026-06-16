@@ -3,6 +3,14 @@
 > Drop in a CSV — get back a full data-quality report, statistics, correlations,
 > auto-generated charts, and an automated executive summary.
 
+## 🚀 Live Demo
+
+🔗 **[csv-insight-pipeline.vercel.app](https://csv-insight-pipeline.vercel.app)**
+
+> ⚠️ The backend runs on Render's free tier, which sleeps after 15 minutes of inactivity. The first request after a cold start can take 30-50 seconds. Subsequent requests are fast.
+
+---
+
 ![Python](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688?logo=fastapi&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2-150458?logo=pandas&logoColor=white)
