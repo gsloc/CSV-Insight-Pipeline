@@ -52,6 +52,22 @@ presentation layer (Next.js), so each tier scales independently.
 - **Visualize**: histograms, categorical bar charts, scatter plots, and a correlation
   heatmap — all auto-generated from the data's types, with interactive filtering.
 
+---
+
+## 💡 What I Learned
+
+I built this to teach myself full-stack engineering from scratch. A few of the lessons:
+
+- **Architecture matters early.** The 4-layer separation (Routes → Controllers → Services → Core) felt like overkill at first, but it made the test suite trivial and would make scaling to a worker queue a single-day task.
+- **Real-world data is messy.** Encoding detection, malformed rows, mixed-type columns — I learned more about CSVs in this project than I'd hoped to.
+- **`NaN` isn't valid JSON.** A FastAPI response that worked locally crashed the browser parser. The fix taught me about strict JSON contracts at the API boundary.
+- **Pandas C engine vs Python engine.** They handle malformed rows completely differently. The C engine catches what I needed; the Python engine silently swallows the same input. Reading library internals saved hours of debugging.
+- **Deployment isn't free.** Free-tier services sleep, cold-start, and rate-limit. Designing for those realities upfront — like graceful loading states and a clear status indicator — matters more than the deployment itself.
+
+If you have feedback or want to chat about the architecture, reach out: [LinkedIn](https://www.linkedin.com/in/garrett-slocumb-b17035280/)
+
+---
+
 ### Dashboard tour
 
 | Tab | What it shows |
@@ -231,7 +247,7 @@ Returns service status and the available strategies / outlier methods.
 
 ```bash
 cd server
-pip install -r requirements.txt    # if you haven't already
+pip install -r requirements.txt   
 python -m pytest
 ```
 
