@@ -123,7 +123,14 @@ export function FileUpload({
       </button>
 
       <p className="mt-3 text-center text-xs text-slate-400">
-        Try the bundled sample at <code className="rounded bg-slate-100 px-1 py-0.5">sample_data/sample_sales.csv</code>
+        Try the bundled sample:{" "}
+        <a
+          href="/sample_sales.csv"
+          download="sample_sales.csv"
+          className="rounded bg-slate-100 px-1 py-0.5 font-mono text-slate-600 underline underline-offset-2 transition hover:bg-slate-200 hover:text-blue-600"
+        >
+          sample_sales.csv
+        </a>
       </p>
     </div>
   );
