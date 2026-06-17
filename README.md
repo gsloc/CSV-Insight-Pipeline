@@ -149,6 +149,17 @@ csv-insight-pipeline/
 
 ## 🚀 Quick start
 
+### Docker Quick Start (one command)
+
+```bash
+docker compose up --build
+```
+
+Open <http://localhost:3100>. Backend runs on <http://localhost:8100>.
+Tear down with `docker compose down`.
+
+---
+
 ### 1. Backend (FastAPI, port 8100)
 
 ```bash
