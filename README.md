@@ -64,7 +64,11 @@ I built this to teach myself full-stack engineering from scratch. A few of the l
 - **Pandas C engine vs Python engine.** They handle malformed rows completely differently. The C engine catches what I needed; the Python engine silently swallows the same input. Reading library internals saved hours of debugging.
 - **Deployment isn't free.** Free-tier services sleep, cold-start, and rate-limit. Designing for those realities upfront — like graceful loading states and a clear status indicator — matters more than the deployment itself.
 
-If you have feedback or want to chat about the architecture, reach out: [LinkedIn](https://www.linkedin.com/in/garrett-slocumb-b17035280/)
+If you have feedback or want to chat about the architecture, reach out: 
+
+Personal site: [garrettslocumb.com](https://garrettslocumb.com)
+
+[LinkedIn](https://www.linkedin.com/in/garrett-slocumb-b17035280/)
 
 ---
 
